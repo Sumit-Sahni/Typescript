@@ -1,4 +1,5 @@
 import { SelectedPage, ClassType } from "../shared/types"
+import { motion } from "framer-motion";
 import image1 from "@/assets/image1.png";
 import image2 from "@/assets/image2.png";
 import image3 from "@/assets/image3.png";
@@ -57,7 +58,9 @@ const  OurClasses= ({setSelectedPage}: Props) => {
      id="ourclasses"
      className="w-full bg-primary-100 py-40"
     >
-    <div >
+    <motion.div 
+      onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
+    >
         <div className="mx-auto w-5/6" >
              <div className="md:w-3/5">
                 <HText>Our Classes</HText>
@@ -86,7 +89,7 @@ const  OurClasses= ({setSelectedPage}: Props) => {
                  }
             </ul>
         </div>
-    </div>
+    </motion.div>
     </section>
 
   )
