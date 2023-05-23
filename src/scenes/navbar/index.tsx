@@ -84,7 +84,7 @@ const Navbar = ({isTopOfPage,selectedPage, setSelectedPage}: Props) => {
                 {/*Close ICON */}
                 <div className="flex justify-end p-10">
                     <button onClick={()=> setIsMenuToggled(!isMenuToggled)}>
-                    <XMarkIcon className="w-6 h-6 text-gray-400" />
+                     <XMarkIcon className="w-6 h-6 text-gray-400" />
                     </button>
                 </div>
                 {/* MENU ITEMS */}

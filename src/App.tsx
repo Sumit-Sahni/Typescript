@@ -6,6 +6,11 @@ import OurClasses from "@/scenes/ourClasses";
 import Benifit from "@/scenes/benifits";
 import ContactUs from  "@/scenes/contactUs";
 import Footer from "@/scenes/footer";
+// import ProductList from "./Products/ProductList";
+// import ProductForm from "./Products/ProductForm";
+// import CartList from "./Products/CartList";
+import store from "./store/store";
+import {Provider} from "react-redux";
 function App() {
  
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -29,6 +34,9 @@ function App() {
 
   return (
     <div>
+      <Provider store={store}>  
+
+  
     <Navbar
       isTopOfPage={isTopOfPage}
       selectedPage={selectedPage}
@@ -39,6 +47,7 @@ function App() {
     <OurClasses setSelectedPage={setSelectedPage}/>
     <ContactUs setSelectedPage={setSelectedPage}/>
     <Footer />
+    </Provider>
     </div>
     
   )
