@@ -38,7 +38,7 @@ const Navbar = ({isTopOfPage,selectedPage, setSelectedPage,}: Props) => {
                         <h1>Home</h1>
                         <h1>About</h1>
                         <h1>Contact</h1>
-                         <Link to="/products">Go to Products</Link>
+                         <Link to="/products" className=" animate-pulse">Go to Products</Link>
                     </div>
                     <div>
                         <div className={`${flexBetween} gap-8`}>

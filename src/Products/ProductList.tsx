@@ -41,7 +41,10 @@ const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
         <div className={`${flexBetween} mx-auto w-5/6` }> 
             <div className={`${flexBetween} w-full gap-16` }>
                 {/* LEFT SIDE */}
-                <img src={Logo} alt="Logo"/>
+                <Link to={"/"}>
+                   <img src={Logo} alt="Logo"/>
+                </Link>
+               
                 {/* RIGHT SIDE */}
                 {isAboveMediumScreen ?(
                 <div className={`${flexBetween} w-full`}>
@@ -49,8 +52,13 @@ const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
                       <Link to={"/"}>Home</Link>
                     </div>
                     <div>
-                    <Link to={"/contact"}>
-                      <ShoppingBagIcon className=" h-8 w-8 text-yellow cursor-pointer"/>
+                    <Link to={"/cart"} className="relative ">
+                      <ShoppingBagIcon className="w-8 h-8  cursor-pointer ">
+                               
+                      </ShoppingBagIcon>
+                      <div className="w-8 h-8 absolute  -top-4 left-10 bg-primary-300 flex items-center justify-center rounded-full">
+                         <h1 className="text-black">{totalCartProduct.length}</h1>
+                      </div>
                     </Link>  
                     
                     </div>
@@ -85,9 +93,15 @@ const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
                 {/* MENU ITEMS */}
                 <div className="w-full  h-[50%]">
                 <div className={`ml-[33%] flex flex-col gap-6`}>
-                        <h1>Home</h1>
-                        <h1>About</h1>
-                        <h1>Contact</h1>
+                      <Link to={"/"}>Home</Link>
+                        <Link to={"/cart"} className="relative ">
+                           <ShoppingBagIcon className="w-8 h-8  cursor-pointer ">
+                                    
+                           </ShoppingBagIcon>
+                           <div className="w-8 h-8 absolute  -top-4 left-10 bg-primary-300 flex items-center justify-center rounded-full">
+                              <h1 className="text-black">{totalCartProduct.length}</h1>
+                           </div>
+                        </Link>  
                     </div>
                 </div>
             </motion.div>
@@ -98,10 +112,13 @@ const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
         {
            products.map((product, index )=>{
               return(
-             <div key={index} className=" sm:w-60 md:w-96 mx-2 border my-4 flex-col flex items-center hover:shadow-lg hover:border-2   justify-around p-10">
+             <div key={index} className=" sm:w-60 md:w-96 mx-2  my-4 flex-col flex items-center hover:shadow-lg hover:border-2   justify-around p-10">
                  <img src={product.image} className="w-80 overflow-hidden object-contain"/>
                  <div className="text-center py-2">
                      <h1 className="text-2xl font-mono text-black font-semibold">{product.title}</h1>
+                     <div className="py-2">
+                       <h1 className=" text-slate-700 font-semibold">₹ {product.price}</h1>
+                     </div>
                  </div>
                 <div className="text-center my-2 border border-slate-600 rounded-xl">
                    <button  className="rounded-md hover:rounded-xl border bg-black-500 px-10 py-2 hover:bg-black hover:text-white cursor-pointer" onClick={()=> addToCartHandler(product)}>Add To Cart</button>
