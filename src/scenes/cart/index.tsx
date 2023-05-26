@@ -6,9 +6,7 @@ const Cart = () => {
   const totalCartProduct  = useSelector(getCartProduct)
   const Toatl = useSelector(getTotalPrice)
   const dispatch = useAppDispatch();
-  function setOpen(arg0: boolean): void {
-    throw new Error("Function not implemented.");
-  }
+
 
   const  removeFormStores = (id:string) =>{
       dispatch(removeFromCart(id));

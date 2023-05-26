@@ -16,7 +16,7 @@ type Props = {
 
 }
 
-const Navbar = ({isTopOfPage,selectedPage, setSelectedPage,}: Props) => {
+const Navbar = ({isTopOfPage, setSelectedPage,}: Props) => {
 
     const flexBetween ="flex  items-center justify-between"
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
