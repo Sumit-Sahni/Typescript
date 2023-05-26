@@ -2,19 +2,21 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import {Bars3Icon, XMarkIcon} from  "@heroicons/react/24/solid"
 import Logo  from "../../assets/Logo.png"
-import Link from "./Link"
+// import Link from "./Link"
+import { Link } from 'react-router-dom';
 import { SelectedPage } from "@/scenes/shared/types";
 import ActionButton from "../shared/ActionButton";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 type Props = {
+
     isTopOfPage:boolean;
     selectedPage:SelectedPage;
     setSelectedPage:(value:SelectedPage) => void;
 
 }
 
-const Navbar = ({isTopOfPage,selectedPage, setSelectedPage}: Props) => {
+const Navbar = ({isTopOfPage,selectedPage, setSelectedPage,}: Props) => {
 
     const flexBetween ="flex  items-center justify-between"
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
@@ -33,26 +35,10 @@ const Navbar = ({isTopOfPage,selectedPage, setSelectedPage}: Props) => {
                 {isAboveMediumScreen ?(
                 <div className={`${flexBetween} w-full`}>
                     <div className={`${flexBetween} gap-8 text-sm`}>
-                       <Link
-                        page="Home"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
-                         <Link
-                        page="Benifits"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
-                         <Link
-                        page="Our Classes"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
-                         <Link
-                        page="Contact Us"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
+                        <h1>Home</h1>
+                        <h1>About</h1>
+                        <h1>Contact</h1>
+                         <Link to="/products">Go to Products</Link>
                     </div>
                     <div>
                         <div className={`${flexBetween} gap-8`}>
@@ -90,26 +76,10 @@ const Navbar = ({isTopOfPage,selectedPage, setSelectedPage}: Props) => {
                 {/* MENU ITEMS */}
                 <div className="w-full  h-[50%]">
                 <div className={`ml-[33%] flex flex-col gap-6`}>
-                       <Link
-                        page="Home"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
-                         <Link
-                        page="Benifits"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
-                         <Link
-                        page="Our Classes"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
-                         <Link
-                        page="Contact Us"
-                        selectedPage={selectedPage}
-                        setSelectedPage={setSelectedPage}
-                        />
+                        <h1>Home</h1>
+                        <h1>About</h1>
+                        <h1>Contact</h1>
+                        <Link to="/products">Go to Products</Link>
                     </div>
                 </div>
             </motion.div>
